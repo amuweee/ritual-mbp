@@ -1,0 +1,14 @@
+# Ignore everything
+/*
+
+# Except
+!.gitignore
+!.zshrc
+!.vimrc
+
+!.config/
+.config/*
+!config/yabai
+!config/skhd
+
+!*/Library/Application\ Support/Code/User/settings.json
