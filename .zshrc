@@ -71,6 +71,7 @@ ZSH_THEME="mikeh"
 plugins=(
 git
 vi-mode
+osx
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,6 +111,22 @@ if [ -f '/Users/mengyubai/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/U
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mengyubai/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mengyubai/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-alias python='/usr/local/opt/python@3.7/bin/python3'
+# alias python='/usr/local/opt/python@3.7/bin/python3'
+# alias python3='/usr/local/opt/python@3.7/bin/python3'
 alias lsa='ls -lah'
-alias init-yeti='cd ~/git-repos/yeti/gold && source venv/bin/activate && source ../credentials/my_profile'
+alias yeti='cd ~/git-repos/yeti/gold && source venv/bin/activate && source ../credentials/my_profile'
+alias venv='source .venv/bin/activate'
+alias vim='nvim'
+alias tl='clear && task list'
+alias snowsql='/Applications/SnowSQL.app/Contents/MacOS/snowsql --authenticator externalbrowser'
+
+# vim settings
+set -o vi
+stty -ixon
+
+VI_MODE_SET_CURSOR=true
+
+task
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH

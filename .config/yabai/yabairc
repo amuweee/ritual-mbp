@@ -86,7 +86,9 @@ yabai -m rule --add app="^Photo Booth$" manage=off
 yabai -m rule --add app="^Spotify$" space=^10
 yabai -m rule --add app="^iTerm2$" space=^2
 yabai -m rule --add app="^Visual Studio Code$" space=^3
-yabai -m rule --add app="^zoom.us$" space=^7 layout=float
+yabai -m rule --add app="^zoom.us$" stick=on layer=above manage=off
+yabai -m rule --add app="^zoom$" stick=on layer=above manage=off
+yabai -m rule --add app="^Numi$" stick=on layer=above manage=off
 yabai -m rule --add app="^Slack$" space=^4
 
 
