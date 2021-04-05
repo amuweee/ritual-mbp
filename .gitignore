@@ -1,5 +1,8 @@
 # Ignore everything
 /*
+**/.venv
+**/venv
+**/.DS_store
 
 # Except
 !.gitignore
@@ -10,5 +13,9 @@
 .config/*
 !config/yabai
 !config/skhd
+!.config/nvim
+.config/nvim/env
+
+
 
 !*/Library/Application\ Support/Code/User/settings.json

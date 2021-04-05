@@ -8,7 +8,7 @@ export ZSH="/Users/mengyubai/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="mikeh"
+ZSH_THEME="suvash"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -116,9 +116,18 @@ if [ -f '/Users/mengyubai/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then
 alias lsa='ls -lah'
 alias yeti='cd ~/git-repos/yeti/gold && source venv/bin/activate && source ../credentials/my_profile'
 alias venv='source .venv/bin/activate'
-alias vim='nvim'
+# alias vim='nvim'
+# alias vi='nvim'
 alias tl='clear && task list'
 alias snowsql='/Applications/SnowSQL.app/Contents/MacOS/snowsql --authenticator externalbrowser'
+alias rebase='gcm && git fetch && git pull origin master && git checkout - && git merge master'
+alias profile='sh ~/git-repos/data-profiler/generate.sh'
+
+if [ -h '/usr/local/bin/vim' ] || [ -h '/usr/local/bin/vi' ] || [ -h '/usr/bin/vim' ] || [ -h '/usr/bin/vi' ]; 
+then
+    alias vim='/usr/local/bin/nvim'
+fi
+
 
 # vim settings
 set -o vi
