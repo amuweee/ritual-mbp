@@ -26,6 +26,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
+    " Easymotion
+    Plug 'easymotion/vim-easymotion'
     " QoL
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'liuchengxu/vim-which-key'
