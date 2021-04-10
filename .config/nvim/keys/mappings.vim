@@ -22,3 +22,13 @@ nnoremap <leader>j   :resize -10<CR>
 nnoremap <leader>k   :resize +10<CR>
 nnoremap <leader>l   :vertical resize -10<CR>
 nnoremap <leader>h   :vertical resize +10<CR>
+
+nnoremap <leader>1   :buffer 1<CR>
+nnoremap <leader>2   :buffer 2<CR>
+nnoremap <leader>3   :buffer 3<CR>
+nnoremap <leader>4   :buffer 4<CR>
+nnoremap <leader>5   :buffer 5<CR>
+nnoremap <leader>6   :buffer 6<CR>
+nnoremap <leader>7   :buffer 7<CR>
+nnoremap <leader>8   :buffer 8<CR>
+nnoremap <leader>9   :buffer 9<CR>

@@ -116,8 +116,6 @@ if [ -f '/Users/mengyubai/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then
 alias lsa='ls -lah'
 alias yeti='cd ~/git-repos/yeti/gold && source venv/bin/activate && source ../credentials/my_profile'
 alias venv='source .venv/bin/activate'
-# alias vim='nvim'
-# alias vi='nvim'
 alias tl='clear && task list'
 alias snowsql='/Applications/SnowSQL.app/Contents/MacOS/snowsql --authenticator externalbrowser'
 alias rebase='gcm && git fetch && git pull origin master && git checkout - && git merge master'

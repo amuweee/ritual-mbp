@@ -29,7 +29,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Easymotion
     Plug 'easymotion/vim-easymotion'
     " QoL
-    Plug 'nathanaelkane/vim-indent-guides'
     Plug 'liuchengxu/vim-which-key'
 
 call plug#end()

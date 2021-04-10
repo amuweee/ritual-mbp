@@ -12,5 +12,11 @@ nmap s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
 
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+" map <Leader>w <Plug>(easymotion-w)
+" map <Leader>W <Plug>(easymotion-W)
+" map <Leader>e <Plug>(easymotion-e)
+" map <Leader>E <Plug>(easymotion-E)
+" map <Leader>b <Plug>(easymotion-b)
+" map <Leader>B <Plug>(easymotion-B)

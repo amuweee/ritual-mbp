@@ -35,6 +35,8 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set relativenumber                      " Sets the line number display to relative to the current line
 set ignorecase                          " Make searching case insensitive
 set smartcase                           " ... unless the query has capital letters.
+set lazyredraw
+set ttyfast
 
 "set autochdir                           " Your working directory will always be the same as your working directory
 
