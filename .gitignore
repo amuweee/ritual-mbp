@@ -11,11 +11,15 @@
 
 !.config/
 .config/*
-!config/yabai
-!config/skhd
+!.config/yabai
+!.config/skhd
 !.config/nvim
 .config/nvim/env
 
 
+#alacritty
+!.config/alacritty
+.config/alacritty/*
+!.config/alacritty/alacritty.yml
 
 !*/Library/Application\ Support/Code/User/settings.json
