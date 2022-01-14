@@ -9,7 +9,6 @@ export ZSH="/Users/mengyubai/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="suvash"
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -104,28 +103,44 @@ source $ZSH/oh-my-zsh.sh
 
 ZSH_DISABLE_COMPFIX="true"
 export PATH=/usr/local/bin:$PATH
+history -1000
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/mengyubai/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mengyubai/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/mengyubai/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mengyubai/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+function dbt_run_test() {
+    branch=$1
+    suffix=$2
+    models=$(git diff $branch --name-only | grep '\.sql$' | awk -F '/' '{ print $NF }' | sed "s/\.sql$/${suffix}/g" | tr '\n' ' ')
+    echo "Running models: ${models}"
+    dbt run --models $models
+    dbt test --models $models
+}
+
+
+function dbt_rebase() {
+    git checkout master
+    git fetch
+    dbt run --state target/ --models @state:modified
+    git pull origin master
+    git checkout -
+    git merge master
+}
 
 # alias python='/usr/local/opt/python@3.7/bin/python3'
 # alias python3='/usr/local/opt/python@3.7/bin/python3'
 alias lsa='ls -lah'
 alias yeti='cd ~/git-repos/yeti/gold && source venv/bin/activate && source ../credentials/my_profile'
+alias growth='cd ~/git-repos/growth && source ~/git-repos/growth/dbt/bqviews/venv/bin/activate'
 alias venv='source .venv/bin/activate'
 alias tl='clear && task list'
 alias snowsql='/Applications/SnowSQL.app/Contents/MacOS/snowsql --authenticator externalbrowser'
-alias rebase='gcm && git fetch && git pull origin master && git checkout - && git merge master'
-alias profile='sh ~/git-repos/data-profiler/generate.sh'
+alias csv_profile='sh ~/git-repos/data-profiler/csv_generate.sh'
+alias sql_profile='sh ~/git-repos/data-profiler/sql_generate.sh'
+alias cleanup="git branch --merged | grep -v '\*\|master\|main\|develop' | xargs -n 1 git branch -d"
 
 if [ -h '/usr/local/bin/vim' ] || [ -h '/usr/local/bin/vi' ] || [ -h '/usr/bin/vim' ] || [ -h '/usr/bin/vi' ]; 
 then
     alias vim='/usr/local/bin/nvim'
 fi
-
 
 # vim settings
 set -o vi
@@ -137,3 +152,17 @@ task
 
 # added by Snowflake SnowSQL installer v1.2
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+
+
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+
+
+PATH=$(pyenv root)/shims:$PATH
+eval "$(pyenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mengyubai/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mengyubai/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mengyubai/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mengyubai/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
